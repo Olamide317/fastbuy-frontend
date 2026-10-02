@@ -1,26 +1,35 @@
 import axios from "axios";
 import { NavLink, useSearchParams } from "react-router-dom";
 import { useEffect, useState } from "react";
+import Cookies from "js-cookie";
 
 export default function CheckPayment() {
     const [searchParams] = useSearchParams();
     const [status, setStatus] = useState("loading");
 
     const reference = searchParams.get("reference");
+    const token = Cookies.get("token");
 
     console.log(searchParams);
 
     useEffect(() => {
         const confirmPayment = async () => {
             try {
-                const payment = await axios.get(`https://fastbuy-backend-jsjp.onrender.com/pay/verify/${reference}`);
+                const payment = await axios.get(`https://fastbuy-backend-jsjp.onrender.com/pay/verify/${reference}`,
+                    {
+                        headers: {
+                            "Content-Type": "application/json",
+                            Authorization: `Bearer ${token}`,
+                        },
+                    },
+                );
                 setStatus(payment.data.data.status);
             } catch (error) {
                 console.log(error.response.data || "Something went wrong");
             }
         };
         confirmPayment();
-    }, [reference]);
+    }, [reference, token]);
 
     return (
         <div className="flex items-center justify-center flex-col min-h-[80vh">
