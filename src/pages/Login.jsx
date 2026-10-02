@@ -26,7 +26,7 @@ export default function Login() {
 
     try {
       const response = await axios.post(
-        "https://fastbuy-frontend.vercel.app/auth/login",
+        "https://fastbuy-backend-jsjp.onrender.com/auth/login",
         formData,
       );
 

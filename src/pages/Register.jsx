@@ -27,7 +27,7 @@ export default function Register() {
 
     try {
       const response = await axios.post(
-        "https://fastbuy-frontend.vercel.app/auth/register",
+        "https://fastbuy-backend-jsjp.onrender.com/auth/register",
         formData,
       );
 

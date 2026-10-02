@@ -13,7 +13,7 @@ export default function CheckPayment() {
     useEffect(() => {
         const confirmPayment = async () => {
             try {
-                const payment = await axios.get(`https://fastbuy-frontend.vercel.app/pay/verify/${reference}`);
+                const payment = await axios.get(`https://fastbuy-backend-jsjp.onrender.com/pay/verify/${reference}`);
                 setStatus(payment.data.data.status);
             } catch (error) {
                 console.log(error.response.data || "Something went wrong");

@@ -13,7 +13,7 @@ const Home = () => {
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const response = await axios.get("https://fastbuy-frontend.vercel.app//product");
+        const response = await axios.get("https://fastbuy-backend-jsjp.onrender.com//product");
         setFoodItems(response.data.products);
 
         console.log(response);
@@ -55,7 +55,7 @@ const Home = () => {
     }
 
     try {
-      const response = await axios.post("https://fastbuy-frontend.vercel.app/pay/initialize",
+      const response = await axios.post("https://fastbuy-backend-jsjp.onrender.com/pay/initialize",
         {
           productId: id,
         },
