@@ -2,6 +2,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
+import CheckPayment from "./pages/CheckPayment";
 import { ToastContainer } from "react-toastify";
 import MainLayout from "./layout/MainLayout";
 
@@ -14,6 +15,7 @@ const App = () => {
           <Route path="/" element={<Home />} />
           <Route path="/register" element={<Register />} />
           <Route path="/login" element={<Login />} />
+          <Route path="/verify/payment" element={<CheckPayment />} />
         </Route>
       </Routes>
     </BrowserRouter>
