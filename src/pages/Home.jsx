@@ -13,7 +13,7 @@ const Home = () => {
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const response = await axios.get("https://fastbuy-backend-jsjp.onrender.com//product");
+        const response = await axios.get("https://fastbuy-backend-jsjp.onrender.com/product");
         setFoodItems(response.data.products);
 
         console.log(response);
